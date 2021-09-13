@@ -4,6 +4,7 @@
 # In[ ]:
 
 
+import os
 from flask import Flask, request, jsonify
 import json
 import re 
@@ -13,6 +14,8 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Hello, World!"
+
+
 
 @app.route("/message", methods=['POST'])
 def Message():
@@ -166,3 +169,6 @@ def Message():
     
     return jsonify(response_data)
 
+
+if __name__ == "__main__":
+        app.run(host = '0.0.0.0', port = 8000)
